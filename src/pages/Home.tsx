@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "wouter";
 import { usePageMeta } from "@/lib/seo";
 import heroImg from "@/assets/hero.webp";
+import beachPanorama from "@/assets/beach-panorama.webp";
 import valueConfident from "@/assets/value-confident.webp";
 import valueCurious from "@/assets/value-curious.webp";
 import valueHappy from "@/assets/value-happy.webp";
@@ -72,27 +73,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-24 bg-accent/10 relative">
+      {/* Values Section — poster-style on desktop, cards on smaller screens */}
+      <section className="pt-24 bg-[#FBF7EE] relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 xl:mb-14">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Our Beacons of Learning</h2>
             <p className="text-lg text-muted-foreground">
-              These seven core values illuminate our approach to early years education, guiding every child to reach their full potential.
+              At Little Lightkeepers Nursery, we nurture the qualities that help children flourish both now and in the future.
             </p>
           </div>
+        </div>
 
-          <div className="flex flex-wrap justify-center gap-8">
+        {/* xl+: seven columns with dotted connectors dropping into the beach scene */}
+        <div className="hidden xl:block">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-7 gap-5 text-center items-start">
+              {beacons.map((beacon) => (
+                <div key={beacon.title} className="flex flex-col items-center h-full">
+                  <h3 className="font-serif italic text-2xl text-primary mb-3 leading-tight text-balance">{beacon.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{beacon.desc}</p>
+                  <span aria-hidden="true" className="mt-5 block h-14 w-0 border-l-2 border-dotted border-primary/50" />
+                  <span aria-hidden="true" className="block w-2.5 h-2.5 rounded-full bg-primary/60" />
+                </div>
+              ))}
+            </div>
+          </div>
+          <img
+            src={beachPanorama}
+            alt="Watercolour beach scene: a scallop shell, pearl, starfish, bucket and spade, sailboat, sandcastle and lighthouse along the shore"
+            className="w-full -mt-1 select-none pointer-events-none"
+          />
+        </div>
+
+        {/* below xl: circular vignette cards */}
+        <div className="xl:hidden container mx-auto px-4 md:px-6">
+          <div className="flex flex-wrap justify-center gap-5 md:gap-8">
             {beacons.map((beacon, i) => (
-              <div key={i} className="glass-panel rounded-3xl p-5 md:p-8 text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300 w-full max-w-sm md:max-w-none md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.375rem)] xl:w-[calc(25%-1.5rem)]">
+              <div key={i} className="glass-panel rounded-3xl p-5 md:p-8 text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300 w-full max-w-sm md:max-w-none md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.375rem)]">
                 <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full overflow-hidden ring-4 ring-accent/30 shadow-md group-hover:scale-105 transition-transform duration-300">
                   <img src={beacon.icon} alt="" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-2 md:mb-3 text-foreground">{beacon.title}</h3>
+                <p className="font-serif italic text-xl font-semibold mb-2 md:mb-3 text-foreground">{beacon.title}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">{beacon.desc}</p>
               </div>
             ))}
           </div>
+          <img
+            src={beachPanorama}
+            alt=""
+            className="w-full mt-10 rounded-3xl shadow-sm"
+          />
+        </div>
+
+        {/* tagline band, poster-style */}
+        <div className="relative z-10 container mx-auto px-4 md:px-6 -mt-7 xl:-mt-9 pb-16">
+          <p className="bg-primary text-primary-foreground text-center font-serif text-lg md:text-2xl rounded-full px-8 py-4 md:py-5 max-w-3xl mx-auto shadow-xl">
+            Guiding little learners towards a{" "}
+            <span className="italic font-bold text-secondary">bright future</span>.
+          </p>
         </div>
       </section>
 
