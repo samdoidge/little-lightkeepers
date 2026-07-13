@@ -3,19 +3,22 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "wouter";
 import { usePageMeta } from "@/lib/seo";
 import heroImg from "@/assets/hero.webp";
-import iconLighthouse from "@/assets/icon-lighthouse.webp";
-import iconShells from "@/assets/icon-shells.webp";
-import iconSandcastle from "@/assets/icon-sandcastle.webp";
-import iconSailboat from "@/assets/icon-sailboat.webp";
+import valueConfident from "@/assets/value-confident.webp";
+import valueCurious from "@/assets/value-curious.webp";
+import valueHappy from "@/assets/value-happy.webp";
+import valueIndependent from "@/assets/value-independent.webp";
+import valueResilient from "@/assets/value-resilient.webp";
+import valueSociable from "@/assets/value-sociable.webp";
+import valueNature from "@/assets/value-nature.webp";
 
 const beacons = [
-  { title: "Confident", desc: "Willing to try new things and believe in themselves.", icon: iconLighthouse },
-  { title: "Curious", desc: "Eager to explore, question and discover.", icon: iconShells },
-  { title: "Happy", desc: "Feeling safe, secure and valued.", icon: iconSandcastle },
-  { title: "Independent", desc: "Developing self-help skills and decision-making.", icon: iconSailboat },
-  { title: "Resilient", desc: "Keep trying, problem solve and overcome challenges.", icon: iconLighthouse },
-  { title: "Sociable", desc: "Building friendships and learning to work together.", icon: iconShells },
-  { title: "Connected to Nature", desc: "Developing respect and understanding of the natural world.", icon: iconSandcastle },
+  { title: "Confident", desc: "Willing to try new things and believe in themselves.", icon: valueConfident },
+  { title: "Curious", desc: "Eager to explore, question and discover.", icon: valueCurious },
+  { title: "Happy", desc: "Feeling safe, secure and valued.", icon: valueHappy },
+  { title: "Independent", desc: "Developing self-help skills and decision-making.", icon: valueIndependent },
+  { title: "Resilient", desc: "Keep trying, problem solve and overcome challenges.", icon: valueResilient },
+  { title: "Sociable", desc: "Building friendships and learning to work together.", icon: valueSociable },
+  { title: "Connected to Nature", desc: "Developing respect and understanding of the natural world.", icon: valueNature },
 ];
 
 export default function Home() {
@@ -81,11 +84,11 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center gap-8">
             {beacons.map((beacon, i) => (
-              <div key={i} className="glass-panel rounded-3xl p-8 text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.375rem)] xl:w-[calc(25%-1.5rem)]">
-                <div className="w-24 h-24 mb-6 rounded-full bg-accent/20 flex items-center justify-center p-4 group-hover:scale-110 transition-transform duration-300">
-                  <img src={beacon.icon} alt="" className="w-full h-full object-contain drop-shadow-sm" />
+              <div key={i} className="glass-panel rounded-3xl p-5 md:p-8 text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300 w-full max-w-sm md:max-w-none md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.375rem)] xl:w-[calc(25%-1.5rem)]">
+                <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 rounded-full overflow-hidden ring-4 ring-accent/30 shadow-md group-hover:scale-105 transition-transform duration-300">
+                  <img src={beacon.icon} alt="" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-3 text-foreground">{beacon.title}</h3>
+                <h3 className="font-serif text-xl font-semibold mb-2 md:mb-3 text-foreground">{beacon.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{beacon.desc}</p>
               </div>
             ))}

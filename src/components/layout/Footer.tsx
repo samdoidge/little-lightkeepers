@@ -43,7 +43,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span>12 Coastal Way<br/>Seaside Town<br/>CT12 4AB</span>
+                <span>Southwell Business Park<br/>2 Compass Terrace, South Way<br/>Portland, Dorset DT5 2NP</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary shrink-0" />

@@ -47,12 +47,12 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium whitespace-nowrap transition-colors hover:text-primary ${
                   location === link.href ? "text-primary border-b-2 border-primary pb-1" : "text-foreground/80"
                 }`}
               >
@@ -61,14 +61,14 @@ export function Navbar() {
             ))}
             <a
               href="tel:01234567890"
-              className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-sm font-medium whitespace-nowrap text-foreground/80 hover:text-primary transition-colors"
             >
               <Phone className="w-4 h-4 text-primary" />
-              01234 567890
+              <span className="hidden xl:inline">01234 567890</span>
             </a>
             <Link
               href="/visit"
-              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-medium shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-200"
+              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-medium whitespace-nowrap shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-200"
             >
               Book a Visit
             </Link>
@@ -96,7 +96,7 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] bg-white z-40 transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden fixed left-0 right-0 top-[72px] h-[calc(100dvh-72px)] overflow-y-auto bg-white z-40 transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

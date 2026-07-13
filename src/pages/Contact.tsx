@@ -31,9 +31,9 @@ export default function Contact() {
                     <h3 className="font-serif font-bold text-foreground mb-1">Address</h3>
                     <p className="text-muted-foreground text-sm">
                       Little Lightkeepers Nursery<br />
-                      12 Coastal Way<br />
-                      Seaside Town<br />
-                      CT12 4AB [TO REVIEW]
+                      Southwell Business Park<br />
+                      2 Compass Terrace, South Way<br />
+                      Portland, Dorset DT5 2NP
                     </p>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export default function Contact() {
               </div>
 
               <p className="text-muted-foreground text-sm px-2">
-                [TO REVIEW] We welcome families from Seaside Town and the surrounding villages, including Harbourville, Cliffend, and Baywater — most of our families live within a 15-minute drive.
+                [TO REVIEW] We welcome families from across Portland and Weymouth — including Fortuneswell, Easton, Weston, Southwell, Wyke Regis and Chickerell — most of our families live within a 15-minute drive.
               </p>
             </div>
 
