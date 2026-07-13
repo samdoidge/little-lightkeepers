@@ -1,12 +1,12 @@
 import React from "react";
 import { Layout } from "@/components/layout/Layout";
 import { usePageMeta } from "@/lib/seo";
-import heroImg from "@/assets/hero.png";
-import aboutImg from "@/assets/about.png";
-import babiesImg from "@/assets/room-babies.png";
-import toddlersImg from "@/assets/room-toddlers.png";
-import preschoolImg from "@/assets/room-preschool.png";
-import outdoorImg from "@/assets/outdoor.png";
+import heroImg from "@/assets/hero.webp";
+import aboutImg from "@/assets/about.webp";
+import babiesImg from "@/assets/room-babies.webp";
+import toddlersImg from "@/assets/room-toddlers.webp";
+import preschoolImg from "@/assets/room-preschool.webp";
+import outdoorImg from "@/assets/outdoor.webp";
 
 const images = [
   { src: outdoorImg, alt: "Natural outdoor play area" },

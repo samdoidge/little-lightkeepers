@@ -82,12 +82,12 @@ export default function Fees() {
             <h2 className="text-3xl font-serif font-bold mb-8 text-foreground text-center">Government Funding</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl">
-                <h4 className="font-bold text-lg mb-3">15 Hours Funding</h4>
-                <p className="text-sm text-muted-foreground">Available for all 3 and 4 year olds, and eligible working parents of 9 month olds to 2 year olds.</p>
+                <h4 className="font-bold text-lg mb-3">30 Hours Funding</h4>
+                <p className="text-sm text-muted-foreground">For eligible working parents of children from 9 months old right up to school age.</p>
               </div>
               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl">
-                <h4 className="font-bold text-lg mb-3">30 Hours Funding</h4>
-                <p className="text-sm text-muted-foreground">Available for eligible working parents of 3 and 4 year olds.</p>
+                <h4 className="font-bold text-lg mb-3">15 Hours Universal</h4>
+                <p className="text-sm text-muted-foreground">Every 3 and 4 year old receives 15 funded hours per week, whatever their parents' working status.</p>
               </div>
               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl">
                 <h4 className="font-bold text-lg mb-3">Tax-Free Childcare</h4>

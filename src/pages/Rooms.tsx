@@ -1,9 +1,9 @@
 import React from "react";
 import { Layout } from "@/components/layout/Layout";
 import { usePageMeta } from "@/lib/seo";
-import babiesImg from "@/assets/room-babies.png";
-import toddlersImg from "@/assets/room-toddlers.png";
-import preschoolImg from "@/assets/room-preschool.png";
+import babiesImg from "@/assets/room-babies.webp";
+import toddlersImg from "@/assets/room-toddlers.webp";
+import preschoolImg from "@/assets/room-preschool.webp";
 
 const rooms = [
   {

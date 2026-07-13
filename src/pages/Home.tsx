@@ -2,11 +2,11 @@ import React from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "wouter";
 import { usePageMeta } from "@/lib/seo";
-import heroImg from "@/assets/hero.png";
-import iconLighthouse from "@/assets/icon-lighthouse.png";
-import iconShells from "@/assets/icon-shells.png";
-import iconSandcastle from "@/assets/icon-sandcastle.png";
-import iconSailboat from "@/assets/icon-sailboat.png";
+import heroImg from "@/assets/hero.webp";
+import iconLighthouse from "@/assets/icon-lighthouse.webp";
+import iconShells from "@/assets/icon-shells.webp";
+import iconSandcastle from "@/assets/icon-sandcastle.webp";
+import iconSailboat from "@/assets/icon-sailboat.webp";
 
 const beacons = [
   { title: "Confident", desc: "Willing to try new things and believe in themselves.", icon: iconLighthouse },
@@ -79,9 +79,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {beacons.map((beacon, i) => (
-              <div key={i} className="glass-panel rounded-3xl p-8 text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300">
+              <div key={i} className="glass-panel rounded-3xl p-8 text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.375rem)] xl:w-[calc(25%-1.5rem)]">
                 <div className="w-24 h-24 mb-6 rounded-full bg-accent/20 flex items-center justify-center p-4 group-hover:scale-110 transition-transform duration-300">
                   <img src={beacon.icon} alt="" className="w-full h-full object-contain drop-shadow-sm" />
                 </div>

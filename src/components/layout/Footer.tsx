@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import logoImg from "@/assets/logo-lighthouse.png";
+import logoImg from "@/assets/logo-lighthouse.webp";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export function Footer() {

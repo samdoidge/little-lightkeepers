@@ -12,6 +12,7 @@ interface EnquiryData {
   childAge: string;
   preferredStart?: string;
   message?: string;
+  consent: boolean;
 }
 
 export function useCreateEnquiry() {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
-import logoImg from "@/assets/logo-lighthouse.png";
+import logoImg from "@/assets/logo-lighthouse.webp";
 
 export function Navbar() {
   const [location] = useLocation();

@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "@/components/layout/Layout";
 import { usePageMeta } from "@/lib/seo";
-import aboutImg from "@/assets/about.png";
+import aboutImg from "@/assets/about.webp";
 
 export default function About() {
   usePageMeta(

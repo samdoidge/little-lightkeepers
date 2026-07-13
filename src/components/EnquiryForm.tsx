@@ -8,7 +8,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { Link } from "wouter";
 
 const childAgeOptions = ["Under 1", "1–2", "2–3", "3–4", "4+"];
 
@@ -19,6 +21,9 @@ const formSchema = z.object({
   childAge: z.string().min(1, "Child's age is required"),
   preferredStart: z.string().optional(),
   message: z.string().optional(),
+  consent: z.boolean().refine((v) => v === true, {
+    message: "Please confirm you're happy for us to store your details",
+  }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -41,6 +46,7 @@ export function EnquiryForm({
       childAge: "",
       preferredStart: "",
       message: "",
+      consent: false,
     },
   });
 
@@ -196,9 +202,39 @@ export function EnquiryForm({
             )}
           />
 
+          <FormField
+            control={form.control}
+            name="consent"
+            render={({ field }) => (
+              <FormItem>
+                <div className="flex items-start gap-3">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                      className="mt-0.5"
+                    />
+                  </FormControl>
+                  <FormLabel className="text-sm font-normal text-muted-foreground leading-relaxed cursor-pointer">
+                    I consent to Little Lightkeepers storing these details to respond to my
+                    enquiry, as described in our{" "}
+                    <Link
+                      href="/policies/data-protection-gdpr-confidentiality"
+                      className="underline underline-offset-2 hover:text-primary"
+                    >
+                      privacy policy
+                    </Link>
+                    .
+                  </FormLabel>
+                </div>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           {createEnquiry.error && (
             <div className="p-3 rounded-lg bg-destructive/10 text-destructive text-sm">
-              {createEnquiry.error.data?.error || "An error occurred. Please try again."}
+              {createEnquiry.error.message || "An error occurred. Please try again."}
             </div>
           )}
 
