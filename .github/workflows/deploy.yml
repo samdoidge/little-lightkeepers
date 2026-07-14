@@ -30,8 +30,17 @@ jobs:
       - run: npm run build
         env:
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
-      - name: SPA fallback
-        run: cp dist/index.html dist/404.html
+      - name: SPA fallback + real files per route (200s for crawlers)
+        run: |
+          cp dist/index.html dist/404.html
+          for r in about rooms fees gallery visit team careers policies contact faqs \
+                   policies/admissions policies/complaints-and-compliments \
+                   policies/data-protection-gdpr-confidentiality \
+                   policies/equality-inclusion-diversity \
+                   policies/promoting-positive-behaviour \
+                   policies/safeguarding-and-child-protection policies/send; do
+            mkdir -p "dist/$r" && cp dist/index.html "dist/$r/index.html"
+          done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
