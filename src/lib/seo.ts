@@ -11,6 +11,14 @@ export function usePageMeta(title: string, description: string) {
       document.head.appendChild(meta);
     }
     meta.content = description;
+
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://littlelightkeepers.co.uk" + window.location.pathname;
   }, [title, description]);
 }
 

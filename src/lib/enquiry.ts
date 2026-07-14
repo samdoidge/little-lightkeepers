@@ -19,9 +19,14 @@ export function useCreateEnquiry() {
   return useMutation({
     mutationFn: async ({ data }: { data: EnquiryData }) => {
       if (!WEB3FORMS_KEY) {
-        console.warn("[enquiry] VITE_WEB3FORMS_KEY not set — dev no-op", data);
-        await new Promise((r) => setTimeout(r, 600));
-        return { ok: true };
+        if (import.meta.env.DEV) {
+          console.warn("[enquiry] VITE_WEB3FORMS_KEY not set — dev no-op", data);
+          await new Promise((r) => setTimeout(r, 600));
+          return { ok: true };
+        }
+        throw new Error(
+          "Our online form isn't available right now — please call us or email hello@littlelightkeepers.co.uk instead."
+        );
       }
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
